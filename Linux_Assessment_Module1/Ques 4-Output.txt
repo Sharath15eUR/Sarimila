@@ -1,0 +1,14 @@
+sarimila@sarimila-VMware-Virtual-Platform:~/dir1$ cd ..
+sarimila@sarimila-VMware-Virtual-Platform:~$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.1  0.3  23164 14232 ?        Ss   14:30   0:07 /sbin/init sp
+root           2  0.0  0.0      0     0 ?        S    14:30   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    14:30   0:00 [pool_workque
+root           4  0.0  0.0      0     0 ?        I<   14:30   0:00 [kworker/R-rc
+root           5  0.0  0.0      0     0 ?        I<   14:30   0:00 [kworker/R-rc
+root           6  0.0  0.0      0     0 ?        I<   14:30   0:00 [kworker/R-sl
+root           7  0.0  0.0      0     0 ?        I<   14:30   0:00 [kworker/R-ne
+sarimila    2265  0.0  0.1  11296  6748 ?        Ss   14:30   0:02 /usr/bin/dbus
+sarimila    2276  0.0  0.1 618960  7424 ?        Ssl  14:30   0:00 /usr/libexec/
+sarimila    2298  0.0  0.1 317976  6016 ?        Ssl  14:30   0:00 /usr/libexec/
+

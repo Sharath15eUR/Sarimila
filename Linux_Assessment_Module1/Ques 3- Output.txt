@@ -1,0 +1,9 @@
+sarimila@sarimila-VMware-Virtual-Platform:~$ mkdir -p dir1/dir2
+sarimila@sarimila-VMware-Virtual-Platform:~$ ls -a
+sarimila@sarimila-VMware-Virtual-Platform:~$ cd dir1
+sarimila@sarimila-VMware-Virtual-Platform:~/dir1$ touch dir2/file1
+sarimila@sarimila-VMware-Virtual-Platform:~/dir1$ ln -s dir2/file1 link
+sarimila@sarimila-VMware-Virtual-Platform:~/dir1$ ls -l
+total 4
+drwxrwxr-x 2 sarimila sarimila 4096 Jan 23 15:37 dir2
+lrwxrwxrwx 1 sarimila sarimila   10 Jan 23 15:38 link -> dir2/file1

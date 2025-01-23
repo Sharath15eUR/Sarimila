@@ -1,0 +1,10 @@
+sarimila@sarimila-VMware-Virtual-Platform:~$ touch newFile1
+sarimila@sarimila-VMware-Virtual-Platform:~$ ls -al
+total 80
+sarimila@sarimila-VMware-Virtual-Platform:~$ ls -lrt newFile1
+-rw-rw-r-- 1 sarimila sarimila 0 Jan 23 14:57 newFile1
+sarimila@sarimila-VMware-Virtual-Platform:~$ chmod a+x newFile1
+sarimila@sarimila-VMware-Virtual-Platform:~$ ls -lrt newFile1
+-rwxrwxr-x 1 sarimila sarimila 0 Jan 23 14:57 newFile1
+
+

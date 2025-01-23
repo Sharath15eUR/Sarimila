@@ -1,0 +1,13 @@
+sarimila@sarimila-VMware-Virtual-Platform:~$ mkdir dir3
+sarimila@sarimila-VMware-Virtual-Platform:~$ touch dir3/file1 dir3/file2 dir3/file3
+sarimila@sarimila-VMware-Virtual-Platform:~$ ls -lt dir3 > dir3/sort.txt
+sarimila@sarimila-VMware-Virtual-Platform:~$ cd dir3
+sarimila@sarimila-VMware-Virtual-Platform:~/dir3$ ls
+file1  file2  file3  sort.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/dir3$ cat sort.txt
+total 0
+-rw-rw-r-- 1 sarimila sarimila 0 Jan 23 16:18 sort.txt
+-rw-rw-r-- 1 sarimila sarimila 0 Jan 23 16:15 file1
+-rw-rw-r-- 1 sarimila sarimila 0 Jan 23 16:15 file2
+-rw-rw-r-- 1 sarimila sarimila 0 Jan 23 16:15 file3
+
