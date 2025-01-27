@@ -1,5 +1,4 @@
-sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ touch
-inate.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ touch terminate.sh
 sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ cat > terminate.sh
 #!/bin/bash
 
