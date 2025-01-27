@@ -1,0 +1,6 @@
+sarimila@sarimila-VMware-Virtual-Platform:~$ find . -type f -size +1M > largeFile.txt
+sarimila@sarimila-VMware-Virtual-Platform:~$ cat largeFile.txt
+./snap/firefox/common/.cache/mozilla/firefox/i2tgb9jq.default/startupCache/scriptCache.bin
+./snap/firefox/common/.cache/mozilla/firefox/i2tgb9jq.default/startupCache/startupCache.8.little
+./snap/firefox/common/.cache/mozilla/firefox/i2tgb9jq.default/safebrowsing/google-trackwhite-digest256.vlpset
+

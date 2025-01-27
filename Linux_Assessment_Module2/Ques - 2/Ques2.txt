@@ -1,0 +1,16 @@
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ touch config.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ cat > config.txt
+localhost is my hostname.This is the localhost test file.There is no place like localhost.
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ cat updated_config.txt
+127.0.0.1 is my hostname.This is the 127.0.0.1 test file.There is no place like 127.0.0.1.sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module2$ 
+
+
+
+
+
+
+
+
+
+
