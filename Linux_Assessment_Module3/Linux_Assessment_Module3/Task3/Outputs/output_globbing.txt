@@ -1,0 +1,4 @@
+Files matching '.txt' in test_dirs/test_source:
+test_dirs/test_source/file1.txt
+test_dirs/test_source/file2.txt
+test_dirs/test_source/file3.txt

@@ -1,0 +1,101 @@
+# Question 1 - Command-line Arguments and Quoting
+
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ nano backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ chmod +x backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ ./backup_manager.sh
+Usage: ./backup_manager.sh <source_directory> <backup_directory> <file_extension>
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ ./backup_manager.sh "~/test_source"
+Usage: ./backup_manager.sh <source_directory> <backup_directory> <file_extension>
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ ./backup_manager.sh "~/test_source" "~/test_backup" ".txt"
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ ./backup_manager.sh > output_no_args.txt 2>&1
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ ./backup_manager.sh "~/test_source" > output_partial_args.txt 2>&1
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3$ ./backup_manager.sh "~/test_source" "~/test_backup" ".txt" > output_valid_args.txt 2>&1
+
+# Question 2 - Globbing
+
+sarimila@sarimila-VMware-Virtual-Platform:~$ nano Linux_Assessment_Module3/Task3/backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~$ cd Linux_Assessment_Module3/Task3/test_dirs/test_source
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3/test_dirs/test_source$ echo "This is File1 When do you think people die? When they are forgotten. - Dr. Hiluluk"  > file1.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3/test_dirs/test_source$ echo "This is File2. Being strong isn’t just about having power or move. It means protecting something precious. - Roronoa Zoro" > file2.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3/test_dirs/test_source$ echo This is File3. "No matter how deep the night, it always turns to day, eventually. - Brook" > file3.txt
+arimila@sarimila-VMware-Virtual-Platform:~$ chmod +x Linux_Assessment_Module3/Task3/backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt"
+Files matching '.txt' in test_dirs/test_source:
+test_dirs/test_source/file1.txt
+test_dirs/test_source/file2.txt
+test_dirs/test_source/file3.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt" > Outputs/output_globbing.txt
+
+# Question 3 - Export Statements
+
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ nano backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ chmod +x backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt"                                 
+Backing up files from test_dirs/test_source to test_dirs/test_backup
+Backing up test_dirs/test_source/file1.txt
+Backing up test_dirs/test_source/file2.txt
+Backing up test_dirs/test_source/file3.txt
+Backup completed! Report saved as backup_report.log in test_dirs/test_backup
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt" > outputs/output_report.txt 2>&1
+
+
+# Question 4 - Array Operations
+
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Modulesarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ nano backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ chmod +x backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt"
+Files to be backed up:
+test_dirs/test_source/file1.txt - 83 bytes
+test_dirs/test_source/file2.txt - 124 bytes
+test_dirs/test_source/file3.txt - 89 bytes
+Backing up files from test_dirs/test_source to test_dirs/test_backup
+Backing up test_dirs/test_source/file1.txt
+Backing up test_dirs/test_source/file2.txt
+Backing up test_dirs/test_source/file3.txt
+Backup completed! Report saved as backup_report.log in test_dirs/test_backup
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt" > Outputs/output_array.txt
+
+# Question 5 - Conditional Execution
+
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ nano backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ chmod +x backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt"
+Files matching '.txt' in test_dirs/test_source:
+file1.txt - 4.0K
+file2.txt - 4.0K
+file3.txt - 4.0K
+test_dirs/test_backup/file1.txt is up to date. Skipping backup.
+test_dirs/test_backup/file2.txt is up to date. Skipping backup.
+test_dirs/test_backup/file3.txt is up to date. Skipping backup.
+Backup completed! Report saved as backup_report.log in test_dirs/test_backup
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt" > Outputs/output_conditional.txt 2>&1
+
+#Question 6 - Output Report
+
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ nano backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ chmod +x backup_manager.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Modulesarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ ./backup_manager.sh "test_dirs/test_source" "test_dirs/test_backup" ".txt"
+Backing up files from test_dirs/test_source to test_dirs/test_backup
+Backing up test_dirs/test_source/file1.txt
+Backing up test_dirs/test_source/file2.txt
+Backing up test_dirs/test_source/file3.txt
+Report saved as backup_report.log in test_dirs/test_backup
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ cat test_dirs/test_backup/backup_report.log
+Backup completed!
+Total files processed: 3
+Total size of files backed up: 296 bytes
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module3/Task3$ cat test_dirs/test_backup/backup_report.log
+Backup completed!
+Total files processed: 3
+Total size of files backed up: 296 bytes
+Backup directory: test_dirs/test_backup
+
+
+
+
+
+
+
+
+
+
