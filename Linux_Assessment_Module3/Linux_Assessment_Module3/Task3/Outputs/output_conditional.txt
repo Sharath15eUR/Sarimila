@@ -1,8 +1,0 @@
-Files matching '.txt' in test_dirs/test_source:
-file1.txt - 4.0K
-file2.txt - 4.0K
-file3.txt - 4.0K
-test_dirs/test_backup/file1.txt is up to date. Skipping backup.
-test_dirs/test_backup/file2.txt is up to date. Skipping backup.
-test_dirs/test_backup/file3.txt is up to date. Skipping backup.
-Backup completed! Report saved as backup_report.log in test_dirs/test_backup

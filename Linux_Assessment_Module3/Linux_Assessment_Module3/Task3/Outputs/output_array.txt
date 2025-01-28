@@ -1,9 +1,0 @@
-Files to be backed up:
-test_dirs/test_source/file1.txt - 83 bytes
-test_dirs/test_source/file2.txt - 124 bytes
-test_dirs/test_source/file3.txt - 89 bytes
-Backing up files from test_dirs/test_source to test_dirs/test_backup
-Backing up test_dirs/test_source/file1.txt
-Backing up test_dirs/test_source/file2.txt
-Backing up test_dirs/test_source/file3.txt
-Backup completed! Report saved as backup_report.log in test_dirs/test_backup
