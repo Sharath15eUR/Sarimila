@@ -1,6 +1,3 @@
-# Linux Assignment Module 3
-
-
 This assignment involves creating a shell script, `backup_manager.sh`, that automates the backup of files based on a specific file extension from a source directory to a backup directory. 
 
 ## Steps and Explanation for Each Question
