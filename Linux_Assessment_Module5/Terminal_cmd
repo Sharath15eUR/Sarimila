@@ -1,0 +1,42 @@
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Modulesarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ nano file_analyzer.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ chmod +x file_analyzer.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ ls -l Folder
+total 12
+-rw-rw-r-- 1 sarimila sarimila 183 Feb  1 18:46 f1.txt
+-rw-rw-r-- 1 sarimila sarimila 126 Feb  1 18:47 f2.txt
+-rw-rw-r-- 1 sarimila sarimila 119 Feb  1 18:48 f3.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ ./file_analyzer.sh -d Folder -k cook
+Found 'cook' in: Folder/f3.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ ./file_analyzer.sh -d Folder -k Calm
+Found 'Calm' in: Folder/f2.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ ./file_analyzer.sh -f Folder/f1.txt -k risks
+Found 'risks' in: Folder/f1.txt
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ ./file_analyzer.sh -d Fold -k cook
+Error: Directory 'Fold' not found!
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Modulesarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ ./file_analyzer.sh -f f1.txt -k risks
+Error: File 'f1.txt' not found!
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ ./file_analyzer.sh --help
+Usage: ./file_analyzer.sh [OPTIONS]
+
+Options:
+  -d <directory>   Search for a keyword in a directory (recursive search)
+  -k <keyword>     Specify the keyword to search for
+  -f <file>        Search for a keyword in a specific file
+  --help           Display this help menu
+
+Examples:
+  ./file_analyzer.sh -d Folder -k cook
+  ./file_analyzer.sh -f Folder/f1.txt -k risks
+  ./file_analyzer.sh --help
+  
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module5$ cat errors.log
+Error: Directory 'Fold' not found!
+Error: Directory 'cam' not found!
+Error: File 'f1' not found!
+Error: File 'f1.txt' not found!
+
+
+
+
+
+
