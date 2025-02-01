@@ -1,0 +1,82 @@
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module4$ nano extract_info.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module4$ chmod +x extract_info.sh
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module4$ ./extract_info.sh input.txt
+Extraction completed. Output saved in output.txt.
+sarimila@sarimila-VMware-Virtual-Platform:~/Linux_Assessment_Module4$ cat output.txt
+Frame Time     : "Dec 31, 2024 12:50:54.938907000 India Standard Time",
+WLAN FC Type   : "1",
+WLAN FC Subtype: "9",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:54.962697000 India Standard Time",
+WLAN FC Type   : "0",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:54.962708000 India Standard Time",
+WLAN FC Type   : "0",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:54.971221000 India Standard Time",
+WLAN FC Type   : "2",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:54.971552000 India Standard Time",
+WLAN FC Type   : "1",
+WLAN FC Subtype: "9",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:54.972329000 India Standard Time",
+WLAN FC Type   : "0",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:54.973323000 India Standard Time",
+WLAN FC Type   : "0",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.010441000 India Standard Time",
+WLAN FC Type   : "0",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.041501000 India Standard Time",
+WLAN FC Type   : "1",
+WLAN FC Subtype: "12",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.041508000 India Standard Time",
+WLAN FC Type   : "1",
+WLAN FC Subtype: "13",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.041516000 India Standard Time",
+WLAN FC Type   : "1",
+WLAN FC Subtype: "11",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.041522000 India Standard Time",
+WLAN FC Type   : "2",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.046124000 India Standard Time",
+WLAN FC Type   : "2",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.046498000 India Standard Time",
+WLAN FC Type   : "1",
+WLAN FC Subtype: "9",
+----------------------------------
+----------------------------------
+Frame Time     : "Dec 31, 2024 12:50:55.064630000 India Standard Time",
+WLAN FC Type   : "0",
+WLAN FC Subtype: "8",
+----------------------------------
+----------------------------------
+
+
