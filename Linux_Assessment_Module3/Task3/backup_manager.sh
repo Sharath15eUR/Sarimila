@@ -7,7 +7,7 @@ file_extension="$3"
 # Validate arguments
 if [ -z "$source_dir" ] || [ -z "$backup_dir" ] || [ -z "$file_extension" ]; then
     echo "Usage: $0 <source_directory> <backup_directory> <file_extension>"
-    exit 1F
+    exit 1
 fi
 
 # verify if source directory exists
