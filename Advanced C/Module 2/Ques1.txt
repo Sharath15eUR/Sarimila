@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <stdbool.h>
+#include <time.h>
+
+// Thread A:  prime numbers
+void *sumOfPrimes(void *arg) {
+    int N = *(int *)arg;
+    int count = 0, num = 2, sum = 0;
+
+    while (count < N) {
+        bool isPrime = true;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            sum += num;
+            count++;
+        }
+        num++;
+    }
+
+    printf("Thread A: Sum of first %d prime numbers = %d\n", N, sum);
+    pthread_exit(NULL);
+}
+
+// Thread B: Print every 2 seconds for 100 seconds
+void *thread1Func(void *arg) {
+    time_t start = time(NULL);
+    while (time(NULL) - start < 100) {
+        printf("Thread 1 running\n");
+        sleep(2);
+    }
+    pthread_exit(NULL);
+}
+
+// Thread C: Print every 3 seconds for 100 seconds
+void *thread2Func(void *arg) {
+    time_t start = time(NULL);
+    while (time(NULL) - start < 100) {
+        printf("Thread 2 running\n");
+        sleep(3);
+    }
+    pthread_exit(NULL);
+}
+
+int main() {
+    int N;
+    pthread_t threadA, threadB, threadC;
+
+    printf("Enter value of N (for sum of first N prime numbers): ");
+    scanf("%d", &N);
+
+    // Thread A - sum of primes
+    pthread_create(&threadA, NULL, sumOfPrimes, &N);
+
+    // Threads B & C - run in parallel
+    pthread_create(&threadB, NULL, thread1Func, NULL);
+    pthread_create(&threadC, NULL, thread2Func, NULL);
+
+    // Wait for all threads to finish
+    pthread_join(threadA, NULL);
+    pthread_join(threadB, NULL);
+    pthread_join(threadC, NULL);
+
+    return 0;
+}
