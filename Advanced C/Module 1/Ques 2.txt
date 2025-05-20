@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Rearrange even before odd
+void rearrangeEvenOdd(int *arr, int size) {
+    int *temp = (int *)malloc(size * sizeof(int));
+    if (temp == NULL) {
+        printf("Memory allocation failed.\n");
+        return;
+    }
+
+    int *read = arr;
+    int *write = temp;
+
+    //copy even numbers
+    for (int i = 0; i < size; i++) {
+        if (*(read + i) % 2 == 0) {
+            *write = *(read + i);
+            write++;
+        }
+    }
+
+    //copy odd numbers
+    for (int i = 0; i < size; i++) {
+        if (*(read + i) % 2 != 0) {
+            *write = *(read + i);
+            write++;
+        }
+    }
+
+    // Copy back to original array
+    for (int i = 0; i < size; i++) {
+        *(arr + i) = *(temp + i);
+    }
+
+    free(temp);
+}
+
+void printArray(int *arr, int size) {
+    printf("Array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", *(arr + i));
+    }
+    printf("\n");
+}
+
+int main() {
+    int size;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int *arr = (int *)malloc(size * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    printf("Enter %d integers:\n", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", (arr + i));  
+    }
+
+    printf("\nOriginal ");
+    printArray(arr, size);
+
+    rearrangeEvenOdd(arr, size);
+
+    printf("Rearranged ");
+    printArray(arr, size);
+
+    free(arr);
+    return 0;
+}
+
+
+

@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_TASKS 3
+#define MAX_DAYS 7
+#define MAX_TASK_LENGTH 100
+
+// Structure for a Day
+struct Day {
+    char dayName[10];
+    char tasks[MAX_TASKS][MAX_TASK_LENGTH];
+    int taskCount;
+};
+
+//display tasks
+void displayTasks(struct Day week[]) {
+    printf("\n--- Weekly Tasks ---\n");
+    for (int i = 0; i < MAX_DAYS; i++) {
+        printf("\n%s:\n", week[i].dayName);
+        if (week[i].taskCount == 0) {
+            printf("  No tasks.\n");
+        } else {
+            for (int j = 0; j < week[i].taskCount; j++) {
+                printf("  - %s\n", week[i].tasks[j]);
+            }
+        }
+    }
+}
+
+int main() {
+    struct Day week[MAX_DAYS] = {
+        {"Monday",   {}, 0},
+        {"Tuesday",  {}, 0},
+        {"Wednesday",{}, 0},
+        {"Thursday", {}, 0},
+        {"Friday",   {}, 0},
+        {"Saturday", {}, 0},
+        {"Sunday",   {}, 0}
+    };
+
+    int choice;
+    char task[MAX_TASK_LENGTH];
+
+    while (1) {
+        printf("\n--- Task Entry Menu ---\n");
+        printf("Choose a day to add tasks:\n");
+        for (int i = 0; i < MAX_DAYS; i++) {
+            printf("%d. %s\n", i + 1, week[i].dayName);
+        }
+        printf("8. Display All Tasks\n");
+        printf("9. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        getchar(); // consume newline
+
+        if (choice >= 1 && choice <= 7) {
+            int dayIndex = choice - 1;
+            if (week[dayIndex].taskCount >= MAX_TASKS) {
+                printf("Task limit reached for %s.\n", week[dayIndex].dayName);
+            } else {
+                printf("Enter task for %s: ", week[dayIndex].dayName);
+                fgets(task, MAX_TASK_LENGTH, stdin);
+                task[strcspn(task, "\n")] = 0; // remove newline
+
+                strcpy(week[dayIndex].tasks[week[dayIndex].taskCount], task);
+                week[dayIndex].taskCount++;
+                printf("Task added.\n");
+            }
+        } else if (choice == 8) {
+            displayTasks(week);
+        } else if (choice == 9) {
+            printf("Exiting...\n");
+            break;
+        } else {
+            printf("Invalid choice.\n");
+        }
+    }
+
+    return 0;
+}
+
+

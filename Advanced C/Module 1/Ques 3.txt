@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+// search 
+bool searchMatrix(int matrix[][100], int n, int key) {
+    int row = 0;
+    int col = n - 1;
+
+    while (row < n && col >= 0) {
+        if (matrix[row][col] == key) {
+            return true;
+        } else if (matrix[row][col] > key) {
+            col--; // move left
+        } else {
+            row++; // move down
+        }
+    }
+    return false;
+}
+
+int main() {
+    int n, key;
+    int matrix[100][100];
+
+    printf("Enter the size of the matrix (n x n): ");
+    scanf("%d", &n);
+
+    printf("Enter the sorted matrix (%d x %d):\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    printf("Enter the key to search: ");
+    scanf("%d", &key);
+
+    if (searchMatrix(matrix, n, key)) {
+        printf("Key %d found in the matrix.\n", key);
+    } else {
+        printf("Key %d not found in the matrix.\n", key);
+    }
+
+    return 0;
+}
+
